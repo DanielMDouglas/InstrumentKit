@@ -29,6 +29,7 @@ from . import phasematrix
 from . import picowatt
 from . import qubitekk
 from . import rigol
+from . import slac
 from . import srs
 from . import tektronix
 from . import teledyne
