@@ -92,7 +92,7 @@ class Thermometer(SCPIMultimeter):
             )
         # pylint: disable=no-member
         value = float(self.query(f"MEAS:{mode.value}?"))
-        return value * UNITS[mode]
+        return u.Quantity(value, UNITS[mode])
 
 
 # UNITS #############################################################

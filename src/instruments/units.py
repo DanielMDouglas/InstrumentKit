@@ -10,5 +10,5 @@ import pint
 # UNITS #######################################################################
 
 # ureg = pint.get_application_registry()
-ureg = pint.UnitRegistry(autoconvert_offset_to_baseunit = True)
+ureg = pint.get_application_registry()
 ureg.define("centibelmilliwatt = 1e-3 watt; logbase: 10; logfactor: 100 = cBm")
