@@ -50,7 +50,6 @@ class Thermometer(SCPIMultimeter):
         super().__init__(filelike)
         self.timeout = 3 * u.second
         self.terminator = "\n"
-        # self.terminator = "\r"
         # self.positions = {}
         # self.connect()
     
@@ -64,7 +63,6 @@ class Thermometer(SCPIMultimeter):
         temperature_probe_0 = "TEMP0"
         temperature_probe_1 = "TEMP1"
         temperature_probe_2 = "TEMP2"
-        temperature_probe_3 = "TEMP3"
 
     # METHODS ##
 
@@ -94,12 +92,10 @@ class Thermometer(SCPIMultimeter):
         value = float(self.query(f"MEAS:{mode.value}?"))
         return u.Quantity(value, UNITS[mode])
 
-
 # UNITS #############################################################
 
 UNITS = {
     Thermometer.Mode.temperature_probe_0: u.celsius,
     Thermometer.Mode.temperature_probe_1: u.celsius,
     Thermometer.Mode.temperature_probe_2: u.celsius,
-    Thermometer.Mode.temperature_probe_3: u.celsius,
 }
